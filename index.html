@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lens Artistry — Wedding Photography</title>
+  <meta name="description" content="Elegant wedding photography brochure site with interactive gallery, pricing, and contact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container nav-wrap">
+      <nav class="left-nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#location">Location</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="brand">
+        <a href="#top" class="logo">Lens&nbsp;Artistry</a>
+      </div>
+      <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div id="mobile-drawer" class="mobile-drawer" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="drawer-inner">
+        <a href="#about" class="drawer-link">About</a>
+        <a href="#portfolio" class="drawer-link">Portfolio</a>
+        <a href="#location" class="drawer-link">Location</a>
+        <a href="#pricing" class="drawer-link">Pricing</a>
+        <a href="#contact" class="drawer-link">Contact</a>
+        <a href="https://instagram.com/" target="_blank" rel="noopener" class="drawer-link">Instagram ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-inner container">
+        <h1>Timeless Wedding Stories</h1>
+        <p>Elegant, honest, and cinematic photography — crafted with care.</p>
+        <div class="cta-row">
+          <a href="#portfolio" class="btn primary">View Portfolio</a>
+          <a href="#contact" class="btn ghost">Enquire</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section container">
+      <div class="cols">
+        <div>
+          <h2>About</h2>
+          <p>We document weddings with a calm, unobtrusive approach — blending editorial elegance with candid emotion. Expect gentle direction, natural light, and refined color.</p>
+          <ul class="perks">
+            <li>Dual-camera coverage & backup gear</li>
+            <li>Secure cloud delivery</li>
+            <li>Film-inspired color grading</li>
+          </ul>
+          <a class="btn tiny" href="#" download>Download Brochure (PDF)</a>
+        </div>
+        <div class="about-card">
+          <img loading="lazy" src="images/_DSC3554.jpg" alt="Photographer portrait placeholder"/>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="section container">
+      <h2>Portfolio</h2>
+      <p class="muted">Hover to gently zoom; click to view full screen.</p>
+      <div class="grid">
+        <figure class="card"><img src="images/brochire.png" alt="Gallery image 1" data-lightbox="images/brochire.png"></figure>
+        <figure class="card"><img src="images/_DSC3599.jpg" alt="Gallery image 2" data-lightbox="images/_DSC3599.jpg"></figure>
+        <figure class="card"><img src="images/_DSC4130.jpg" alt="Gallery image 3" data-lightbox="images/_DSC4130.jpg"></figure>
+        <figure class="card"><img src="images/_DSC4143.jpg" alt="Gallery image 4" data-lightbox="images/_DSC4143.jpg"></figure>
+        <figure class="card"><img src="images/_DSC4278.jpg" alt="Gallery image 5" data-lightbox="images/_DSC4278.jpg"></figure>
+        <figure class="card"><img src="images/_DSC4296.jpg" alt="Gallery image 6" data-lightbox="images/_DSC4296.jpg"></figure>
+        <figure class="card"><img src="images/IMG_9844.JPG" alt="Gallery image 7" data-lightbox="images/IMG_9844.JPG"></figure>
+        <figure class="card"><img src="images/IMG_9849.JPG" alt="Gallery image 8" data-lightbox="images/IMG_9849.JPG"></figure>
+        <figure class="card"><img src="images/_DSC3554.jpg" alt="Gallery image 9" data-lightbox="images/_DSC3554.jpg"></figure>
+      </div>
+    </section>
+
+    <section id="location" class="section container">
+      <h2>Location</h2>
+      <p>Based in Gadag. Available for travel nationwide and destination weddings.</p>
+      <div class="map-embed" style="height:420px;border-radius:12px;overflow:hidden">
+        <iframe
+          src="https://www.google.com/maps/place/Gadag-Betageri,+Karnataka/@15.4289254,75.6129083,14z/data=!3m1!4b1!4m6!3m5!1s0x3bb8f967cb94e543:0xf5bf3c0b8326e977!8m2!3d15.4315406!4d75.6355149!16zL20vMGYxZ3l3?entry=ttu&g_ep=EgoyMDI1MTEwMi4wIKXMDSoASAFQAw%3D%3D"
+          width="100%" height="100%"
+          style="border:0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </section>
+
+    <section id="pricing" class="section container">
+      <h2>Pricing & Packages</h2>
+      <div class="price-grid">
+        <article class="price-card">
+          <h3>Classic</h3>
+          <p class="price">₹65,000</p>
+          <ul>
+            <li>6 hours coverage</li>
+            <li>200 edited photos</li>
+            <li>Online gallery</li>
+          </ul>
+          <a href="#contact" class="btn small">Enquire</a>
+        </article>
+        <article class="price-card featured">
+          <h3>Signature</h3>
+          <p class="price">₹95,000</p>
+          <ul>
+            <li>10 hours coverage</li>
+            <li>350 edited photos</li>
+            <li>Album (10x10)</li>
+          </ul>
+          <a href="#contact" class="btn small">Enquire</a>
+        </article>
+        <article class="price-card">
+          <h3>Heirloom</h3>
+          <p class="price">₹1,45,000</p>
+          <ul>
+            <li>Full day coverage</li>
+            <li>500 edited photos</li>
+            <li>Album + Prints</li>
+          </ul>
+          <a href="#contact" class="btn small">Enquire</a>
+        </article>
+      </div>
+
+      <div class="cols terms">
+        <div>
+          <h3>Perks</h3>
+          <ul class="bullets">
+            <li>Candid storytelling</li>
+            <li>Backup gear + data redundancy</li>
+            <li>Delivery within 4–6 weeks</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Terms & Conditions</h3>
+          <ul class="bullets muted">
+            <li>50% booking retainer (non‑refundable)</li>
+            <li>Reschedule subject to availability</li>
+            <li>Travel & stay billed at cost</li>
+            <li>Usage: personal & social; commercial on request</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section container">
+      <h2>Contact</h2>
+      <form id="contactForm" class="contact-form" novalidate>
+        <div class="row">
+          <label>Full Name
+            <input type="text" name="name" required placeholder="Your name" />
+          </label>
+          <label>Email
+            <input type="email" name="email" required placeholder="you@example.com" />
+          </label>
+        </div>
+        <div class="row">
+          <label>Phone
+            <input type="tel" name="phone" placeholder="+91 ..." />
+          </label>
+          <label>Event Date
+            <input type="date" name="date" />
+          </label>
+        </div>
+        <label>Venue / City
+          <input type="text" name="venue" placeholder="City / Venue" />
+        </label>
+        <label>Message
+          <textarea name="message" rows="4" placeholder="Tell us about your wedding..."></textarea>
+        </label>
+        <button type="submit" class="btn primary">Send Enquiry</button>
+        <p class="form-status" aria-live="polite"></p>
+      </form>
+      <div class="socials">
+        <a href="https://www.instagram.com/cineboy_9/" target="_blank" rel="noopener" aria-label="Instagram" class="ig">Instagram</a>
+        <a href="mailto:Cineboy08@gmail.com" class="mail">Email</a>
+        <a href="https://wa.me/918296761081" target="_blank" rel="noopener" class="wa">WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container foot">
+      <small>© <span id="year"></span> Lens Artistry. All rights reserved.</small>
+      <nav class="foot-links">
+        <a href="#about">About</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">
+    <button class="lb-close" aria-label="Close">&times;</button>
+    <button class="lb-prev" aria-label="Previous">&#10094;</button>
+    <img class="lb-img" alt="Expanded view"/>
+    <button class="lb-next" aria-label="Next">&#10095;</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
