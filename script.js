@@ -79,3 +79,53 @@ if (form){
 window.addEventListener('load', () => {
   document.querySelector('.about-image')?.classList.add('loaded');
 });
+// Terms & Conditions Modal
+const openTerms = document.getElementById('open-terms');
+const closeTerms = document.getElementById('close-terms');
+const termsModal = document.getElementById('terms-modal');
+
+if (openTerms && closeTerms && termsModal) {
+  openTerms.addEventListener('click', (e) => {
+    e.preventDefault();
+    termsModal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // prevent scroll
+  });
+
+  closeTerms.addEventListener('click', () => {
+    termsModal.style.display = 'none';
+    document.body.style.overflow = ''; // restore scroll
+  });
+
+  // Close on click outside modal
+  window.addEventListener('click', (e) => {
+    if (e.target === termsModal) {
+      termsModal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+  });
+}
+window.addEventListener("scroll", () => {
+  const nav = document.querySelector(".nav-wrap");
+  if (window.scrollY > 50) {
+    nav.style.background = "transparent";
+    nav.style.boxShadow = "none";
+  } else {
+    nav.style.background = "transparent";
+    nav.style.boxShadow = "none";
+  }
+});
+document.querySelectorAll('a[download]').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const url = this.getAttribute('href');
+    const fileName = this.getAttribute('download') || 'Cineboy_Brochure.pdf';
+    const a = document.createElement('a');
+    a.href = url;
+    a.setAttribute('download', fileName);
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  });
+});
+
+

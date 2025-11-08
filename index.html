@@ -70,7 +70,7 @@
           <li>Film-inspired color grading</li>
         </ul>
     
-        <a href="PDF/brochure.pdf" class="btn">Download Brochure (PDF)</a>
+        <a href="Brochure/CINEBOY_BROCHURE.pdf" class="btn" download="CINEBOY_BROCHURE.pdf">Download Brochure (PDF)</a>
       </div>
     </section>    
 
@@ -78,8 +78,8 @@
       <h2>Portfolio</h2>
       <!-- <p class="muted">Hover to gently zoom; click to view full screen.</p> -->
       <div class="grid">
-        <figure class="card"><img src="Images/DCS42.png" alt="Gallery image 1" data-lightbox="Images/brochire.png"></figure>
-        <figure class="card"><img src="Images/DSC3599.png" alt="Gallery image 2" data-lightbox="Images/DSC3599.png"></figure>
+        <figure class="card"><img src="Images/DSC3599.png" alt="Gallery image 1" data-lightbox="Images/DSC3599.png"></figure>
+        <figure class="card"><img src="Images/DSC4205.jpg" alt="Gallery image 2" data-lightbox="Images/brochire.png"></figure>
         <figure class="card"><img src="Images/DSC4130.png" alt="Gallery image 3" data-lightbox="Images/DSC4130.png"></figure>
         <figure class="card"><img src="Images/DSC4143.png" alt="Gallery image 4" data-lightbox="Images/DSC4143.png"></figure>
         <figure class="card"><img src="Images/DSC4278.png" alt="Gallery image 5" data-lightbox="Images/DSC4278.png"></figure>
@@ -167,26 +167,6 @@
           <a href="#contact" class="btn small">Enquire</a>
         </article>
       </div>
-    
-      <div class="cols terms">
-        <div>
-          <h3>Perks</h3>
-          <ul class="bullets">
-            <li>Candid storytelling</li>
-            <li>Backup gear + data redundancy</li>
-            <li>Delivery within 4–6 weeks</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Terms &amp; Conditions</h3>
-          <ul class="bullets muted">
-            <li>50% booking retainer (non-refundable)</li>
-            <li>Reschedule subject to availability</li>
-            <li>Travel &amp; stay billed at cost</li>
-            <li>Usage: personal &amp; social; commercial on request</li>
-          </ul>
-        </div>
-      </div>
     </section>    
 
     <section id="contact" class="section container">
@@ -237,12 +217,34 @@
     <div class="container foot">
       <small>© <span id="year"></span> Cineboy. All rights reserved.</small>
       <nav class="foot-links">
+        <a href="#" id="open-terms">ⓘ Terms & Conditions</a>
         <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#location">Location</a>
         <a href="#pricing">Pricing</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </footer>
+  
+<!-- Terms Modal -->
+<div id="terms-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" id="close-terms">&times;</span>
+    <h2>Terms & Conditions</h2>
+    <ul class="terms-list">
+      <li>All raw photos and videos will be shared with the client. After transfer, storage copies may be deleted. Only one round of video/highlight corrections is allowed after preview approval.</li>
+      <li>Clients must provide the song for highlight videos before editing; changes later won’t be accepted.</li>
+      <li>Inform photographers in advance about key wedding events (entry, cake cutting, speeches, etc.) so they can prepare.</li>
+      <li>Photographers will capture as many guests as possible, though cooperation may vary. They have priority over guests with mobile cameras and aren’t responsible for poor quality caused by interference.</li>
+      <li>In case of illness or emergency, a replacement will be arranged at no extra cost.</li>
+      <li>Client must cover travel, hotel, and food expenses, except for wedding-day travel handled by the team.</li>
+      <li>Client must obtain permissions and pay charges for photography at all venues. Sufficient time should be provided for couple portraits; the team isn’t liable for missed shots if time is limited.</li>
+      <li>Clients should promptly select and share album photos to avoid printing delays.</li>
+      <li>Drone usage depends on weather, lighting, and no-fly zones (e.g., airports).</li>
+    </ul>
+  </div>
+</div>
 
   <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">
     <button class="lb-close" aria-label="Close">&times;</button>
