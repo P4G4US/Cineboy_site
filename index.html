@@ -3,13 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cineboy — Wedding Photography</title>
+  <title>Cineboy - Wedding Photography</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="128x128" href="Images/icon.png">
   <meta name="description" content="Elegant wedding photography brochure site with interactive gallery, pricing, and contact." />
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("iVxuZTSpjrVX_-OK3"); // paste your Public Key here
+  })();
+</script>
 <body>
   <header class="site-header" role="banner">
     <div class="container nav-wrap">
@@ -192,7 +201,7 @@
           <input type="text" name="venue" placeholder="City / Venue" />
         </label>
         <label>Message
-          <textarea name="message" rows="4" placeholder="Tell us about your wedding..."></textarea>
+          <textarea name="message" rows="4" placeholder="Tell us about your event..."></textarea>
         </label>
         <button type="submit" class="btn primary">Send Enquiry</button>
         <p class="form-status" aria-live="polite"></p>
@@ -202,7 +211,7 @@
           <img src="Images/icon-instagram.svg" alt="Instagram logo">
         </a>
       
-        <a href="mailto:Cineboy08@gmail.com" class="mail" aria-label="Email">
+        <a href="mailto:cineboy08@gmail.com" class="mail" aria-label="Email">
           <img src="Images/icon-mail.svg" alt="Email icon">
         </a>
       

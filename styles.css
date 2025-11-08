@@ -80,7 +80,8 @@ body{
 .contact-form .row{display:grid;gap:12px;grid-template-columns:1fr}
 @media (min-width: 780px){.contact-form .row{grid-template-columns:1fr 1fr}}
 input, textarea{
-  width:100%;padding:12px 14px;border-radius:10px;border:1px solid #e8e8e8;background:#fff;font-family:inherit
+  width:100%;padding:12px 14px;border-radius:10px;border:1px solid #e8e8e8;background:#fff;font-family:inherit;resize: none;
+  overflow-y: auto;
 }
 input:focus, textarea:focus{outline:2px solid transparent;box-shadow:0 0 0 4px rgba(0,0,0,.06)}
 .form-status{min-height:20px;color:var(--muted);font-size:14px}

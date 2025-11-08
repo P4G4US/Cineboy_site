@@ -127,5 +127,38 @@ document.querySelectorAll('a[download]').forEach(link => {
     document.body.removeChild(a);
   });
 });
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contactForm");
+  const status = document.querySelector(".form-status");
 
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
+    status.textContent = "Sending...";
+    status.style.color = "#b6973a";
+
+    emailjs
+      .sendForm("service_yut68wh", "template_gk01cdq", this)
+      .then(() => {
+        status.textContent = "✅ Enquiry sent successfully!";
+        status.style.color = "green";
+        form.reset();
+      })
+      .catch((error) => {
+        console.error("Error sending enquiry:", error);
+        status.textContent = "❌ Failed to send. Please try again.";
+        status.style.color = "red";
+      });
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const dateInput = document.querySelector('input[name="date"]');
+  if (dateInput) {
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, "0");
+    const dd = String(today.getDate()).padStart(2, "0");
+    const minDate = `${yyyy}-${mm}-${dd}`;
+    dateInput.setAttribute("min", minDate);
+  }
+});
