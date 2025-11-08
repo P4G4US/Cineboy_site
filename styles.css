@@ -22,6 +22,14 @@ body{
 }
 .nav-wrap{display:flex;align-items:center;justify-content:space-between;min-height:64px;gap:16px}
 .left-nav{display:flex;gap:16px;align-items:center}
+.right-nav {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-left: auto; /* pushes nav to right */
+}
+.right-nav a{color:var(--text);text-decoration:none;font-weight:500;opacity:.8}
+.right-nav a:hover{opacity:1}
 .left-nav a{color:var(--text);text-decoration:none;font-weight:500;opacity:.8}
 .left-nav a:hover{opacity:1}
 .brand .logo{font-weight:700;color:var(--text);text-decoration:none;letter-spacing:.4px}
@@ -48,7 +56,7 @@ body{
 .btn.ghost{background:#fff;color:#111}
 .btn.small{padding:10px 14px}
 .btn.tiny{padding:8px 12px;font-size:12px}
-.section{padding:64px 0}
+.section{padding:8px 0}
 .cols{display:grid;grid-template-columns:1fr;gap:24px}
 @media (min-width: 900px){.cols{grid-template-columns:1.1fr .9fr;align-items:center}}
 .about-card{border-radius:16px;overflow:hidden;background:var(--card);box-shadow:0 2px 16px var(--ring)}
@@ -93,3 +101,129 @@ input:focus, textarea:focus{outline:2px solid transparent;box-shadow:0 0 0 4px r
 .lb-close{top:20px;right:20px;font-size:40px;transform:none}
 .lb-prev{left:24px}
 .lb-next{right:24px}
+.brand {
+  display: flex;
+  align-items: center;
+  padding-left: 10px; /* optional */
+}
+.brand-logo {
+  height: 40px;              /* taller display height */
+  width: auto;               /* allow proportional scaling */
+  object-fit: contain;       /* keep image proportions */
+  display: block;            /* removes baseline gap */
+  transform: none;           /* remove any previous scale */
+}
+.map-embed {
+  height: 420px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.map-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+.about-centered {
+  text-align: center;
+  padding: 0px 20px;
+}
+
+.about-centered .about-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-bottom: 32px; /* shrink space below about */
+}
+
+.about-centered .about-image {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.about-centered h2 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.about-summary {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  color: #333;
+}
+
+.about-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+}
+
+.about-points li {
+  margin: 6px 0;
+  font-size: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background: #000;
+  color: #fff;
+}
+.about-image {
+  border-radius: 12px;
+  box-shadow: none;
+  background: transparent;
+  mix-blend-mode: multiply; /* or 'darken' depending on your logo color */
+}
+.about-image.loaded { opacity: 1; transform: translateY(0); }
+.socials {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.socials a img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.socials a:hover img {
+  transform: scale(1.15);
+  opacity: 0.8;
+}
+/* Dual map layout */
+.map-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  margin-top: 24px;
+}
+
+.map-embed {
+  flex: 1 1 540px;
+  max-width: 540px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}

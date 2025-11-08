@@ -76,3 +76,6 @@ if (form){
     }, 700);
   });
 }
+window.addEventListener('load', () => {
+  document.querySelector('.about-image')?.classList.add('loaded');
+});
