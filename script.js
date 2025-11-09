@@ -1,157 +1,153 @@
-// Burger / drawer
-const burger = document.querySelector('.burger');
-const drawer = document.getElementById('mobile-drawer');
-if (burger && drawer){
-  const toggle = () => {
-    const open = drawer.classList.toggle('open');
-    burger.setAttribute('aria-expanded', String(open));
-    drawer.setAttribute('aria-hidden', String(!open));
-  };
-  burger.addEventListener('click', toggle);
-  drawer.querySelectorAll('.drawer-link').forEach(a => a.addEventListener('click', () => drawer.classList.remove('open')));
-}
+// All scripts wrapped to ensure DOM is ready
+document.addEventListener("DOMContentLoaded", function () {
+  /* =========================
+     Mobile Nav / Drawer
+  ============================ */
+  const burger = document.querySelector(".burger");
+  const drawer = document.getElementById("mobile-drawer");
 
-// Smooth scroll for same‑page links
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const id = a.getAttribute('href').slice(1);
-    const target = document.getElementById(id);
-    if (target){
-      e.preventDefault();
-      window.scrollTo({top: target.getBoundingClientRect().top + window.pageYOffset - 72, behavior: 'smooth'});
-    }
-  });
-});
+  if (burger && drawer) {
+    const toggle = () => {
+      const open = drawer.classList.toggle("open");
+      burger.setAttribute("aria-expanded", String(open));
+      drawer.setAttribute("aria-hidden", String(!open));
+    };
 
-// Year in footer
-document.getElementById('year').textContent = new Date().getFullYear();
-
-// Lightbox
-const lightbox = document.getElementById('lightbox');
-const lbImg = lightbox.querySelector('.lb-img');
-const lbPrev = lightbox.querySelector('.lb-prev');
-const lbNext = lightbox.querySelector('.lb-next');
-const lbClose = lightbox.querySelector('.lb-close');
-const galleryImgs = Array.from(document.querySelectorAll('[data-lightbox]'));
-let currentIndex = -1;
-
-function openLightbox(index){
-  currentIndex = index;
-  lbImg.src = galleryImgs[currentIndex].dataset.lightbox;
-  lightbox.classList.add('open');
-  lightbox.setAttribute('aria-hidden', 'false');
-}
-function closeLightbox(){
-  lightbox.classList.remove('open');
-  lightbox.setAttribute('aria-hidden', 'true');
-}
-function showPrev(){ if (currentIndex > 0) openLightbox(currentIndex-1); }
-function showNext(){ if (currentIndex < galleryImgs.length-1) openLightbox(currentIndex+1); }
-
-galleryImgs.forEach((imgEl, idx) => {
-  imgEl.addEventListener('click', () => openLightbox(idx));
-});
-
-lbPrev.addEventListener('click', showPrev);
-lbNext.addEventListener('click', showNext);
-lbClose.addEventListener('click', closeLightbox);
-lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
-document.addEventListener('keydown', (e) => {
-  if (!lightbox.classList.contains('open')) return;
-  if (e.key === 'Escape') closeLightbox();
-  if (e.key === 'ArrowLeft') showPrev();
-  if (e.key === 'ArrowRight') showNext();
-});
-
-// Contact form (front-end demo)
-const form = document.getElementById('contactForm');
-if (form){
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const status = form.querySelector('.form-status');
-    status.textContent = 'Sending...';
-    setTimeout(() => {
-      status.textContent = 'Thanks! We will get back to you within 24 hours.';
-      form.reset();
-    }, 700);
-  });
-}
-window.addEventListener('load', () => {
-  document.querySelector('.about-image')?.classList.add('loaded');
-});
-// Terms & Conditions Modal
-const openTerms = document.getElementById('open-terms');
-const closeTerms = document.getElementById('close-terms');
-const termsModal = document.getElementById('terms-modal');
-
-if (openTerms && closeTerms && termsModal) {
-  openTerms.addEventListener('click', (e) => {
-    e.preventDefault();
-    termsModal.style.display = 'block';
-    document.body.style.overflow = 'hidden'; // prevent scroll
-  });
-
-  closeTerms.addEventListener('click', () => {
-    termsModal.style.display = 'none';
-    document.body.style.overflow = ''; // restore scroll
-  });
-
-  // Close on click outside modal
-  window.addEventListener('click', (e) => {
-    if (e.target === termsModal) {
-      termsModal.style.display = 'none';
-      document.body.style.overflow = '';
-    }
-  });
-}
-window.addEventListener("scroll", () => {
-  const nav = document.querySelector(".nav-wrap");
-  if (window.scrollY > 50) {
-    nav.style.background = "transparent";
-    nav.style.boxShadow = "none";
-  } else {
-    nav.style.background = "transparent";
-    nav.style.boxShadow = "none";
+    burger.addEventListener("click", toggle);
+    drawer.querySelectorAll(".drawer-link").forEach((a) =>
+      a.addEventListener("click", () => drawer.classList.remove("open"))
+    );
   }
-});
-document.querySelectorAll('a[download]').forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    const url = this.getAttribute('href');
-    const fileName = this.getAttribute('download') || 'Cineboy_Brochure.pdf';
-    const a = document.createElement('a');
-    a.href = url;
-    a.setAttribute('download', fileName);
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+
+  /* =========================
+     Smooth Scroll
+  ============================ */
+  document.querySelectorAll('a[href^="#"]').forEach((a) => {
+    a.addEventListener("click", (e) => {
+      const id = a.getAttribute("href").slice(1);
+      const target = document.getElementById(id);
+      if (target) {
+        e.preventDefault();
+        window.scrollTo({
+          top:
+            target.getBoundingClientRect().top +
+            window.pageYOffset -
+            72,
+          behavior: "smooth",
+        });
+      }
+    });
   });
-});
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("contactForm");
-  const status = document.querySelector(".form-status");
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+  /* =========================
+     Year in Footer
+  ============================ */
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    status.textContent = "Sending...";
-    status.style.color = "#b6973a";
+  /* =========================
+     Lightbox
+  ============================ */
+  const lightbox = document.getElementById("lightbox");
+  if (lightbox) {
+    const lbImg = lightbox.querySelector(".lb-img");
+    const lbPrev = lightbox.querySelector(".lb-prev");
+    const lbNext = lightbox.querySelector(".lb-next");
+    const lbClose = lightbox.querySelector(".lb-close");
+    const galleryImgs = Array.from(
+      document.querySelectorAll("[data-lightbox]")
+    );
+    let currentIndex = -1;
 
-    emailjs
-      .sendForm("service_yut68wh", "template_gk01cdq", this)
-      .then(() => {
-        status.textContent = "✅ Enquiry sent successfully!";
-        status.style.color = "green";
-        form.reset();
-      })
-      .catch((error) => {
-        console.error("Error sending enquiry:", error);
-        status.textContent = "❌ Failed to send. Please try again.";
-        status.style.color = "red";
-      });
+    function openLightbox(index) {
+      currentIndex = index;
+      lbImg.src = galleryImgs[currentIndex].dataset.lightbox;
+      lightbox.classList.add("open");
+      lightbox.setAttribute("aria-hidden", "false");
+    }
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightbox.setAttribute("aria-hidden", "true");
+    }
+    function showPrev() {
+      if (currentIndex > 0) openLightbox(currentIndex - 1);
+    }
+    function showNext() {
+      if (currentIndex < galleryImgs.length - 1)
+        openLightbox(currentIndex + 1);
+    }
+
+    galleryImgs.forEach((imgEl, idx) => {
+      imgEl.addEventListener("click", () => openLightbox(idx));
+    });
+
+    lbPrev.addEventListener("click", showPrev);
+    lbNext.addEventListener("click", showNext);
+    lbClose.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (!lightbox.classList.contains("open")) return;
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") showPrev();
+      if (e.key === "ArrowRight") showNext();
+    });
+  }
+
+  /* =========================
+     About Image Fade-in
+  ============================ */
+  document.querySelector(".about-image")?.classList.add("loaded");
+
+  /* =========================
+     Terms & Conditions Modal
+  ============================ */
+  const openTerms = document.getElementById("open-terms");
+  const closeTerms = document.getElementById("close-terms");
+  const termsModal = document.getElementById("terms-modal");
+
+  if (openTerms && closeTerms && termsModal) {
+    openTerms.addEventListener("click", (e) => {
+      e.preventDefault();
+      termsModal.style.display = "block";
+      document.body.style.overflow = "hidden";
+    });
+
+    closeTerms.addEventListener("click", () => {
+      termsModal.style.display = "none";
+      document.body.style.overflow = "";
+    });
+
+    window.addEventListener("click", (e) => {
+      if (e.target === termsModal) {
+        termsModal.style.display = "none";
+        document.body.style.overflow = "";
+      }
+    });
+  }
+
+  /* =========================
+     Brochure Download (force download)
+  ============================ */
+  document.querySelectorAll("a[download]").forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const url = this.getAttribute("href");
+      const fileName =
+        this.getAttribute("download") || "Cineboy_Brochure.pdf";
+      const a = document.createElement("a");
+      a.href = url;
+      a.setAttribute("download", fileName);
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    });
   });
-});
-document.addEventListener("DOMContentLoaded", function () {
+
+  /* =========================
+     Min Date for Event
+  ============================ */
   const dateInput = document.querySelector('input[name="date"]');
   if (dateInput) {
     const today = new Date();
@@ -160,5 +156,221 @@ document.addEventListener("DOMContentLoaded", function () {
     const dd = String(today.getDate()).padStart(2, "0");
     const minDate = `${yyyy}-${mm}-${dd}`;
     dateInput.setAttribute("min", minDate);
+  }
+
+  /* =========================
+     Contact Form Validation + EmailJS
+  ============================ */
+  const form = document.getElementById("contactForm");
+  const status = document.querySelector(".form-status");
+
+  if (form && status) {
+    const fields = {
+      name: form.elements["name"],
+      email: form.elements["email"],
+      phone: form.elements["phone"],
+      date: form.elements["date"],
+      venue: form.elements["venue"],
+      message: form.elements["message"],
+    };
+
+    function getErrorElement(input) {
+      let err = input.parentElement.querySelector(".field-error");
+      if (!err) {
+        err = document.createElement("div");
+        err.className = "field-error";
+        err.setAttribute("aria-live", "polite");
+        input.parentElement.appendChild(err);
+      }
+      return err;
+    }
+
+    function showError(input, message) {
+      const err = getErrorElement(input);
+      err.textContent = message;
+      err.style.display = "block";
+      input.classList.add("has-error");
+    }
+
+    function clearError(input) {
+      const err = input.parentElement.querySelector(".field-error");
+      if (err) {
+        err.textContent = "";
+        err.style.display = "none";
+      }
+      input.classList.remove("has-error");
+    }
+
+    function validateName() {
+      const input = fields.name;
+      const value = input.value.trim();
+      if (!value) {
+        showError(input, "Please enter your full name.");
+        return false;
+      }
+      if (value.length < 3) {
+        showError(input, "Name looks too short.");
+        return false;
+      }
+      clearError(input);
+      return true;
+    }
+
+    function validateEmail() {
+      const input = fields.email;
+      const value = input.value.trim();
+      const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!value) {
+        showError(input, "Please enter your email.");
+        return false;
+      }
+      if (!pattern.test(value)) {
+        showError(input, "Please enter a valid email address.");
+        return false;
+      }
+      clearError(input);
+      return true;
+    }
+
+    function validatePhone() {
+      const input = fields.phone;
+      const value = input.value.trim();
+
+      // Phone is optional, but if filled, validate properly
+      if (!value) {
+        clearError(input);
+        return true;
+      }
+
+      // Basic India-friendly pattern: 10 digits, with or without +91 / 0
+      const cleaned = value.replace(/\s+/g, "");
+      const pattern =
+        /^(?:\+91|0)?[6-9]\d{9}$/;
+
+      if (!pattern.test(cleaned)) {
+        showError(
+          input,
+          "Please enter a valid phone number (e.g. 9876543210 or +91...)."
+        );
+        return false;
+      }
+      clearError(input);
+      return true;
+    }
+
+    function validateMessage() {
+      const input = fields.message;
+      const value = input.value.trim();
+      if (!value) {
+        showError(input, "Please tell us a bit about your event.");
+        return false;
+      }
+      if (value.length < 10) {
+        showError(
+          input,
+          "Message is too short. Add a few more details."
+        );
+        return false;
+      }
+      clearError(input);
+      return true;
+    }
+
+    function validateDate() {
+      const input = fields.date;
+      if (!input || !input.value) {
+        // optional: no error if empty
+        clearError(input);
+        return true;
+      }
+      clearError(input);
+      return true;
+    }
+
+    function validateVenue() {
+      const input = fields.venue;
+      if (!input) return true;
+      // optional; you can enforce if you want:
+      clearError(input);
+      return true;
+    }
+
+    function validateField(input) {
+      if (!input) return true;
+      switch (input.name) {
+        case "name":
+          return validateName();
+        case "email":
+          return validateEmail();
+        case "phone":
+          return validatePhone();
+        case "message":
+          return validateMessage();
+        case "date":
+          return validateDate();
+        case "venue":
+          return validateVenue();
+        default:
+          return true;
+      }
+    }
+
+    // Live validation on input + blur
+    Object.values(fields).forEach((input) => {
+      if (!input) return;
+      input.addEventListener("input", () => validateField(input));
+      input.addEventListener("blur", () => validateField(input));
+    });
+
+    function validateForm() {
+      let valid = true;
+      if (!validateName()) valid = false;
+      if (!validateEmail()) valid = false;
+      if (!validatePhone()) valid = false;
+      if (!validateMessage()) valid = false;
+      if (!validateDate()) valid = false;
+      if (!validateVenue()) valid = false;
+
+      if (!valid) {
+        status.textContent = "Please fix the highlighted fields.";
+        status.style.color = "red";
+      } else {
+        status.textContent = "";
+      }
+      return valid;
+    }
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      if (!validateForm()) {
+        const firstError = form.querySelector(".has-error");
+        if (firstError) firstError.focus();
+        return;
+      }
+
+      status.textContent = "Sending...";
+      status.style.color = "#b6973a";
+
+      // Uses EmailJS (already initialized in HTML)
+      emailjs
+        .sendForm("service_yut68wh", "template_gk01cdq", form)
+        .then(() => {
+          status.textContent = "✅ Enquiry sent successfully!";
+          status.style.color = "green";
+          form.reset();
+          // Clear errors after successful submit
+          Object.values(fields).forEach((input) => {
+            if (!input) return;
+            clearError(input);
+          });
+        })
+        .catch((error) => {
+          console.error("Error sending enquiry:", error);
+          status.textContent =
+            "❌ Failed to send. Please try again in a moment.";
+          status.style.color = "red";
+        });
+    });
   }
 });
