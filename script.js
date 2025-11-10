@@ -389,7 +389,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch((error) => {
           console.error("Error sending enquiry:", error);
           status.textContent =
-            "❌ Failed to send. Please try again in a moment.";
+            "❌ Failed to send. Please try again in a moment :)";
           status.style.color = "red";
         });
     });
