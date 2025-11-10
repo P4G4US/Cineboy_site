@@ -375,7 +375,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Uses EmailJS (already initialized in HTML)
       emailjs
-        .sendForm("service_1rd4yse", "template_pvfmt6n", form)
+        .sendForm("service_cineboy", "template_on2ov9n", form)
         .then(() => {
           status.textContent = "✅ Enquiry sent successfully!";
           status.style.color = "green";
