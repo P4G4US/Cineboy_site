@@ -16,7 +16,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
   (function() {
-    emailjs.init("iVxuZTSpjrVX_-OK3"); // paste your Public Key here
+    emailjs.init("lSPMq-OxJ_iNY1D5D"); // paste your Public Key here
   })();
 </script>
 <body>
@@ -34,21 +34,25 @@
         <a href="#pricing">Pricing</a>
         <a href="#contact">Contact</a>
       </nav>
-      <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
-        <span></span><span></span><span></span>
+      <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-drawer">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
       </button>
-    </div>
-    <div id="mobile-drawer" class="mobile-drawer" role="dialog" aria-modal="true" aria-hidden="true">
-      <div class="drawer-inner">
-        <a href="#about" class="drawer-link">About</a>
-        <a href="#portfolio" class="drawer-link">Portfolio</a>
-        <a href="#location" class="drawer-link">Location</a>
-        <a href="#pricing" class="drawer-link">Pricing</a>
-        <a href="#contact" class="drawer-link">Contact</a>
-        <a href="https://instagram.com/" target="_blank" rel="noopener" class="drawer-link">Instagram ↗</a>
-      </div>
+
     </div>
   </header>
+
+  <!-- 👇 MOVE DRAWER TO HERE, OUTSIDE HEADER -->
+  <div id="mobile-drawer" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="drawer-inner">
+      <a href="#about" class="drawer-link">About</a>
+      <a href="#portfolio" class="drawer-link">Portfolio</a>
+      <a href="#location" class="drawer-link">Location</a>
+      <a href="#pricing" class="drawer-link">Pricing</a>
+      <a href="#contact" class="drawer-link">Contact</a>
+    </div>
+  </div>
 
   <main id="top">
     <section class="hero">
@@ -64,7 +68,7 @@
 
     <section id="about" class="section about-centered">
       <div class="about-inner">
-        <img src="Images/LogoCropped.png" alt="Wedding photography" class="about-image">
+        <img src="Images/CINE_FF.png" alt="Wedding photography" class="about-image">
     
         <h2>About</h2>
     
@@ -209,10 +213,6 @@
       <div class="socials">
         <a href="https://www.instagram.com/cineboy_9/" target="_blank" rel="noopener" aria-label="Instagram" class="ig">
           <img src="Images/icon-instagram.svg" alt="Instagram logo">
-        </a>
-      
-        <a href="mailto:cineboy08@gmail.com" class="mail" aria-label="Email">
-          <img src="Images/icon-mail.svg" alt="Email icon">
         </a>
       
         <a href="https://wa.me/918296761081" target="_blank" rel="noopener" aria-label="WhatsApp" class="wa">
