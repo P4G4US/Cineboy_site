@@ -612,7 +612,7 @@ textarea.has-error {
   }
 
   .container {
-    padding: 0; /* body padding provides gutter */
+    padding: 0;  /* body padding provides gutter */
   }
 
   .section {
